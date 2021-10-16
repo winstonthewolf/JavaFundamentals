@@ -8,7 +8,9 @@
         perform the task;
         long endTime = System.nanoTime();
         long executionTime = endTime − startTime;*/
+package Arrays;
 import java.util.*;
+
 import java.util.concurrent.TimeUnit;
 
 public class ExecutionTime {
@@ -38,7 +40,7 @@ public class ExecutionTime {
 
     public static long getExecutionTimeBinary(int [] array, int key ){
         long startTime = System.nanoTime();
-        Arrays.binarySearch(array, key);
+        var i = Arrays.binarySearch(array, key);
         long endTime = System.nanoTime();
         long executionTime = endTime - startTime;
         return executionTime;

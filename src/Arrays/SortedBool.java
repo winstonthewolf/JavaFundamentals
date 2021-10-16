@@ -1,4 +1,4 @@
-/*
+package Arrays;/*
   *7.19 (Sorted?) Write the following method that returns true if the list is already sorted
         in decreasing order.
 
