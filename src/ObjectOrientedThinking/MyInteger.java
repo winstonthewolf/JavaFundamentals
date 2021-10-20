@@ -23,9 +23,18 @@ package ObjectOrientedThinking;
 public class MyInteger {
 
     public static void main (String []args){
-        MyInteger integer = new MyInteger(10);
-        System.out.println(integer.getValue());
+        MyInteger integer = new MyInteger(7);
+        System.out.println(integer.isPrime());                      //Testing methods isPrime(), isPrime(integer), isPrime(MyInteger). Should print out 'true' to following 3 statements if correct code
+
+        System.out.println(MyInteger.isPrime(integer));
+
+        System.out.println(MyInteger.isPrime(7));
+
+        System.out.println(integer.equals(7));                      //Testing equals(int) and equals(MyInteger). Should print 'true' if correct code
+
+        System.out.println(integer.equals(new MyInteger(7)));
     }
+
     private int value =0;
 
     MyInteger(int value){
@@ -43,10 +52,70 @@ public class MyInteger {
     private boolean isOdd(){
         return this.value % 2 == 1;
     }
-   /* private boolean isPrime(){
-        if(this.value % 2 == 0){
-            return true;
+    private boolean isPrime(){
+        if(this.value < 2)
+            return false;
+
+        for(int i = 2; i < this.value / 2; i++){
+
+            if(this.value % i == 0)
+                return false;
         }
-    }*/
+
+        return true;
+    }
+
+    public static boolean isEven(int value){
+        return value % 2 == 0;
+    }
+
+    public static boolean isOdd(int value){
+        return value % 2 == 1;
+    }
+    public static boolean isPrime(int value){
+        if(value < 2)
+            return false;
+
+        for(int i = 2; i < value / 2; i++){
+
+            if(value % i == 0)
+                return false;
+        }
+        return true;
+    }
+
+    public static boolean isEven(MyInteger value){
+        return value.value % 2 == 0;
+
+    }
+
+    public static boolean isOdd(MyInteger value){
+        return value.value % 2 == 1;
+
+    }
+
+    public static boolean isPrime(MyInteger value){
+        if(value.value < 2)
+            return false;
+
+        for(int i = 2; i < value.value / 2; i++){
+
+            if(value.value % i == 0)
+                return false;
+        }
+        return true;
+    }
+
+    private boolean equals(int value){
+        return this.value == value;
+    }
+
+    private boolean equals(MyInteger value){
+        return this.value == value.value;
+    }
+
+    public static int parseInt(char[] char_array){
+
+    }
 
 }
