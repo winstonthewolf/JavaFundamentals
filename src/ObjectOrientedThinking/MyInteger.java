@@ -33,6 +33,9 @@ public class MyInteger {
         System.out.println(integer.equals(7));                      //Testing equals(int) and equals(MyInteger). Should print 'true' if correct code
 
         System.out.println(integer.equals(new MyInteger(7)));
+
+        char [] char_array = {5,4,3,2,1};
+        System.out.println(MyInteger.parseInt(char_array));
     }
 
     private int value =0;
@@ -115,6 +118,10 @@ public class MyInteger {
     }
 
     public static int parseInt(char[] char_array){
+
+        String num_string = new String(char_array);
+        int number = Integer.parseInt(num_string);
+        return number;
 
     }
 
