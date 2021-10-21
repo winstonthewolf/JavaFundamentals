@@ -1,5 +1,4 @@
 /*
-1 hour so far as of today
 Design a class named MyInteger. The class contains:
         - An int data field named value that stores the int value represented by this object.
         - A constructor that creates a MyInteger object for the specified int value.
@@ -34,11 +33,14 @@ public class MyInteger {
 
         System.out.println(integer.equals(new MyInteger(7)));
 
-        char [] char_array = {5,4,3,2,1};
+        char [] char_array = {'5','4','3','2','1'};                 //Testing static methods parseInt(char[]) and parseInt(String)
         System.out.println(MyInteger.parseInt(char_array));
+
+        String myNumber = "32000";
+        System.out.println(MyInteger.parseInt(myNumber));
     }
 
-    private int value =0;
+    private int value;
 
     MyInteger(int value){
         this.value = value;
@@ -120,9 +122,12 @@ public class MyInteger {
     public static int parseInt(char[] char_array){
 
         String num_string = new String(char_array);
-        int number = Integer.parseInt(num_string);
-        return number;
+        return Integer.parseInt(num_string);
 
+    }
+
+    public static int parseInt(String num_string){
+        return Integer.parseInt(num_string);
     }
 
 }
