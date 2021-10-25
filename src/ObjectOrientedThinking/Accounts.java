@@ -1,4 +1,6 @@
-package ObjectsAndClasses;
+package ObjectOrientedThinking;
+
+import ObjectsAndClasses.Account;
 
 import java.util.Scanner;
 
