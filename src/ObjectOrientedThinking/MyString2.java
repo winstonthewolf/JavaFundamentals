@@ -63,8 +63,49 @@ public class MyString2 {
     Need to figure out way to discern between when the returned value is from the length of strings vs when its a character difference
      */
 
+    public MyString2 substring(int begin) {
+
+        StringBuilder string = new StringBuilder(str);
+
+        MyString2 string2 = new MyString2(string.substring(begin));
+
+        return string2;
+
+    }
+
+    public MyString2 toUpperCase(){
+        str = str.toUpperCase();
+        return this;
+    }
+    public char[] toChars(){
+       char [] stringInChar   = new char[str.length()];
+       for(int i = 0; i < str.length(); i++){
+          stringInChar[i]  =  str.charAt(i);
+       }
+       return stringInChar;
+    }
+
+    public static MyString2 valueOf(boolean b){
+         MyString2  boolAsString = new MyString2(String.valueOf(b));
+         return boolAsString;
+    }
+
     public static void main(String []args){
         MyString2 str = new MyString2("Helli");
         System.out.println(str.compare("Hello"));
+
+        MyString2 ok =str.substring(1);
+        System.out.println(ok.str);
+
+        char [] characterString  = ok.toChars();
+        for(int i = 0; i< characterString.length;i++)
+        {
+             System.out.println(characterString[i]);
+        }
+        System.out.println(valueOf(true).str);
     }
+
+    /*
+    TODO: Make class neater by cleaning it up
+     */
 }
