@@ -1,5 +1,7 @@
 package ObjectOrientedThinking;
 
+import java.util.Scanner;
+
 public class Split {
 
 
@@ -28,6 +30,29 @@ public class Split {
         }
         if matches regex then print out.
           */
+
+        String [] array;
+        //need to count how many strings there are to initialize String array
+
+
+        Scanner input = new Scanner(System.in);
+        int index = 0;
+        while(input.hasNext()){
+            for(int i =0; i< s.length(); i++) {
+                if (s.charAt(i) == ASCII CODE)
+                    s.substring(0, i-1);
+            }
+        }
+
+        /*
+            String.length();
+            I want to know how many delimters there are
+                There are atleast the same number of substrings as there are delimeters. need to check if there is more characters after last delimeter
+            I want to know how many seperate words there are  including delimeters soo that I can initialize String []Arry below
+            if hasNext character/s then nextDelimeterIndex+1 print/store through index String.length-1
+            String [] array = String.substring(index, NextdelimterIndex -1)
+            print CharAt(nextDelimterIndex)
+         */
     }
 
 }
