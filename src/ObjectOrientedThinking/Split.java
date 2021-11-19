@@ -52,6 +52,14 @@ public class Split {
             if hasNext character/s then nextDelimeterIndex+1 print/store through index String.length-1
             String [] array = String.substring(index, NextdelimterIndex -1)
             print CharAt(nextDelimterIndex)
+
+         Can count all characters, then account for the delimeters and see how many..
+
+          Latest Solution angle:
+          Count each instance of any sequence of characters until a delimeter. Then also count the delimeter. Add these totals together to get total length of String array to initialize.
+          else if no more characters the last characters read over since the last delimeter was the last word.
+
+
          */
     }
 
