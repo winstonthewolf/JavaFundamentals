@@ -6,7 +6,7 @@ public class Split {
 
 
     public static void main(String[] args) {
-        split("hi#Hello#okay", "#");
+        split("hi#Hello#okay#cheerio", "#");
     }
 
     public static void split(String s, String regex) {
@@ -54,8 +54,8 @@ public class Split {
                     regexIndex = i;
                     inputString[counter] = s.substring(tracker, regexIndex);
                     System.out.println(inputString[counter]);
-                    inputString[counter + 1] = Character.toString(s.charAt(i));
-                    System.out.println(inputString[counter + 1]);
+                    inputString[++counter] = Character.toString(s.charAt(i));
+                    System.out.println(inputString[counter]);
                     counter++;
 
 
@@ -72,12 +72,14 @@ public class Split {
         }
         if (characterNoMatchRegex) {
             System.out.println("last if statement");
-            counter++;
+            //counter++;
             inputString[counter] = s.substring(tracker);
             System.out.println(inputString[counter]);
             //counter++;
             //System.out.println("Printing in last if statement" + inputString[counter]);
         }
+
+        System.out.println("For loop");
         for (String x : inputString) {
             System.out.println(x);
         }
