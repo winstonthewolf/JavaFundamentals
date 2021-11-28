@@ -6,59 +6,83 @@ public class Split {
 
 
     public static void main(String[] args) {
-                      split("hi#Hello#okay","#");
+        split("hi#Hello#okay", "#");
     }
-    public static void split(String s, String regex){
+
+    public static void split(String s, String regex) {
         //String split method
         //If delimiter/character is matched then print it out
 
         //REcognize where the delimiter is, print string before it until the last delimiter, print the current delimeter
-
+        System.out.println("here");
         int regexIndex = 0;
         int count = 0;
-        if(regex.length() == 1) {  //This part is for counting the number of strings and regex so that I can make an array of that size
+        boolean characterNoMatchRegex = s.charAt(s.length() - 1) != regex.charAt(0);
+        if (regex.length() == 1) {//This part is for counting the number of strings and regex so that I can make an array of that size
+
+            //System.out.println("here");
             int i = 0;
             while (i < s.length()) {
-                if (s.charAt(i) == regex.charAt(0)){
+
+               // System.out.println("here 1");
+                if (s.charAt(i) == regex.charAt(0)) {
+
+                    System.out.println("here 2");
                     count++; //adding to counter for every regex character encountered
                     count++; //adding to counter for every string encountered which we assume is before every regex encounter
 
                     regexIndex = i;
                     i++;
                 }
+                i++;
             }
-            if(s.charAt(s.length()-1) != regex.charAt(0)){
+            if (characterNoMatchRegex) {
                 count++;
             }
         }
-
-        String [] inputString = new String[count];
+        System.out.println(count);
+        String[] inputString = new String[count];
 
 
         int i = 0;
         int tracker = 0;
-        int counter=0;
-        if(regex.length() == 1) {  //This part is for counting the number of strings and regex so that I can make an array of that size
+        int counter = 0;
+        if (regex.length() == 1) {  //This part is for counting the number of strings and regex so that I can make an array of that size
             while (i < s.length()) {
-                if (s.charAt(i) == regex.charAt(0)){
-
+                if (s.charAt(i) == regex.charAt(0)) {
+                    System.out.println("here 3");
                     regexIndex = i;
-                    i++;
                     inputString[counter] = s.substring(tracker, regexIndex);
+                    System.out.println(inputString[counter]);
                     inputString[counter + 1] = Character.toString(s.charAt(i));
+                    System.out.println(inputString[counter + 1]);
+                    counter++;
 
+
+                    i++;
 //                        store in x = Substring(from tracker to regexIndex)
 //                        store in x = Character.toString(regex);
 
                     tracker = regexIndex + 1;
-                    }
-
                 }
-            }
-            if(s.charAt(s.length()-1) != regex.charAt(0)){
-                counter = counter + 1;
+
+                i++;
+
             }
         }
+        if (characterNoMatchRegex) {
+            System.out.println("last if statement");
+            counter++;
+            inputString[counter] = s.substring(tracker);
+            System.out.println(inputString[counter]);
+            //counter++;
+            //System.out.println("Printing in last if statement" + inputString[counter]);
+        }
+        for (String x : inputString) {
+            System.out.println(x);
+        }
+    }
+}
         /*
 
         Solution so far but need to incorporate regex argument
@@ -72,7 +96,6 @@ public class Split {
         if matches regex then print out.
           */
 
-        String [] array;
         //need to count how many strings there are to initialize String array
 
 
@@ -123,6 +146,6 @@ public class Split {
 //        if(charAt(string.length-1) =word Char){
 //            count ++; count last string if there is one
 //        }
-    }
 
-}
+
+
