@@ -1,6 +1,17 @@
+
+/*(New string split method) The split method in the String class returns an
+        array of strings consisting of the substrings split by the delimiters. However, the
+        delimiters are not returned. Implement the following new method that returns
+        an array of strings consisting of the substrings split by the matching delimiters,
+        including the matching delimiters.
+
+        public static String[] split(String s, String regex)
+
+        For example, split("ab#12#453", "#") returns ab , # , 12 , # , and 453 in
+        an array of String
+  */
 package ObjectOrientedThinking;
 
-import java.util.Scanner;
 
 public class Split {
 
@@ -13,7 +24,7 @@ public class Split {
 
         int regexIndex = 0;
         int count = 0;
-        boolean characterNoMatchRegex = s.charAt(s.length() - 1) != regex.charAt(0);
+        boolean characterNoMatchRegex = s.charAt(s.length() - 1) != regex.charAt(0); //last character is a word character.
         if (regex.length() == 1) {//This part is for counting the number of strings and regex so that I can make an array of that size
 
             int i = 0;
@@ -24,7 +35,6 @@ public class Split {
                     count++; //adding to counter for every regex character encountered
                     count++; //adding to counter for every word encountered which we assume is before every regex encounter
 
-                    regexIndex = i;
                     i++;
                 }
                 i++;
