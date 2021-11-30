@@ -47,8 +47,8 @@ public class Split {
         String[] inputString = new String[count];
 
         int i = 0;
-        int tracker = 0;
-        int counter = 0;
+        int tracker = 0; //index of the beginning of a new word
+        int counter = 0; //keep track of inputString array variables
         if (regex.length() == 1) {
             while (i < s.length()) {
                 if (s.charAt(i) == regex.charAt(0)) {
