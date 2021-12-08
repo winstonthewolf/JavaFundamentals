@@ -45,7 +45,7 @@ public class Split {
         }
 
         String[] inputString = new String[count];
-
+        
         int i = 0;
         int tracker = 0; //index of the beginning of a new word
         int counter = 0; //keep track of inputString array variables
