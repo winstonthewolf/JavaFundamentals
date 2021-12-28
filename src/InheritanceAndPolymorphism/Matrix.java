@@ -27,14 +27,14 @@ public class Matrix {
 
         ArrayList<Integer> columnTotal = new ArrayList<>(matrixA.getSize());
 
-        num_of_keys = 0;
+        num_of_keys = 0; //Counts occuranes of '1's.
         for (int i = 0; i < matrixA.getSize(); i++) {
             for (int j = 0; j < matrixA.getSize(); j++) {
                 if (matrixA.getMatrix()[j][i] == 1)
                     num_of_keys++;
             }
             columnTotal.add(num_of_keys);
-            num_of_keys = 0;
+            num_of_keys = 0; //reset for next column
         }
 
         for(int i = 0; i < matrixA.getSize(); i++) {
@@ -44,12 +44,24 @@ public class Matrix {
             System.out.println();
         }
 
+         /*
+         * To be able to track the rows with the same max and print those out at the end,
+         * I can call the collections.max method and store the value in V, then
+         * I can remove from the list that max number. Next I can compare that
+         * value in V to another call to collections.max and see if I get the same value
+         * this would mean that I would have another row to print as having max. 
+         * */
+
+
         int maxCol = Collections.max(columnTotal);
         System.out.println(maxCol);
         int indexOfMaxCol = columnTotal.indexOf(maxCol);
         //ystem.out.println(indexOfMaxCol);
         int maxRow = Collections.max(rowTotal);
         System.out.println(maxRow);
+
+//        ArrayList <Integer> arrayOfMaxIndexes = new ArrayList();
+//        rowTotal.forEach(==maxRow);
 
         int indexOfMaxRow = rowTotal.indexOf(maxRow);
                //Make it so that if multiple rows or columns have the same max then print those out too
