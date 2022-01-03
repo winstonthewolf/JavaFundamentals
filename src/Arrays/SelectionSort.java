@@ -1,7 +1,7 @@
 public class SelectionSort {
     //Selects the first number then compares it to the next sequential smallest number and replaces its place with the first number
     //sorting from low to high.
-    //post this to stackoverflow
+
 
     public static void main(String []args){
 

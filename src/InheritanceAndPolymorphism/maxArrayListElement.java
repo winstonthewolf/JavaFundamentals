@@ -1,3 +1,10 @@
+/*
+* Write the following method that returns the
+maximum value in an ArrayList of integers
+*
+*        public static Integer max(ArrayList<Integer> list)
+* */
+
 package InheritanceAndPolymorphism;
 
 import java.util.ArrayList;

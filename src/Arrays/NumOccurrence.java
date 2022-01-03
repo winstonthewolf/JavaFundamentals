@@ -1,3 +1,8 @@
+/*
+* Write a program that reads the integers between
+1 and 50 and counts the occurrences of each. Assume the input ends with 0
+*
+* */
 import java.util.*;
 
 public class NumOccurrence {

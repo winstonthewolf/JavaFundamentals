@@ -1,3 +1,14 @@
+/*
+* (Assign grades) Write a program that reads student scores, gets the best score, and
+then assigns grades based on the following scheme:
+Grade is A if score is >= best -5
+Grade is B if score is >= best -10;
+Grade is C if score is >= best -15;
+Grade is D if score is >= best -20;
+Grade is F otherwise.
+		 The program prompts the user to enter the total number of students, and then
+prompts the user to enter all of the scores, and concludes by displaying the grades.
+* */
 import java.util.Scanner;
 
 public class GradeAssign {

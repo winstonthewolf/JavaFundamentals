@@ -1,5 +1,4 @@
 public class Arrays {
- //Make a case study out of this to ask on the forums.
     public static void main(String[] args) {
 
 

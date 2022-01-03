@@ -19,16 +19,6 @@ public class eliminate {
 
     public static int[]  eliminateDuplicates(int[] list){
 
-       // int [] arr; //array to hold list without duplicates
-
-        //PSUEDO CODE
-        //count how many unique numbers there are in the original array: iterate and compare arr[i] to entire array arr[j] if != to any ++
-        //initialize an array of that size
-        //fill with only unique values
-        //can search across array for current value being iterated for duplicates
-        //can search linearly,(can use any search algo?)  can keep track of how many with a count variable. If more than 1  then value is not unique
-        // two different count variables. one for uniqueness and one to keep track of how many unique numbers there are
-        // if using  a binary search the array needs to be in order
 
         int totalUnique = list.length; //assume all elements in list are unique
         for(int i=0; i < list.length; i++){

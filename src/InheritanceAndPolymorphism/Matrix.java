@@ -1,3 +1,9 @@
+/*
+*
+* (Largest rows and columns) Write a program that randomly fills in 0 s and 1 s
+into an n-by-n matrix, prints the matrix, and finds the rows and columns with the
+most 1 s
+* */
 package InheritanceAndPolymorphism;
 
 import java.util.ArrayList;
