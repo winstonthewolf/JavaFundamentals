@@ -1,4 +1,4 @@
-/*
+package Methods;/*
 *
 * (Financial: credit card number validation) Credit card numbers follow certain
 patterns. A credit card number must have between 13 and 16 digits. It must start
