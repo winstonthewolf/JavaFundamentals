@@ -2,15 +2,17 @@ package InheritanceAndPolymorphism;
 
 import AbstractClassesAndInterfaces.GeometricObject;
 
-public class Circle extends GeometricObject {
+public class Circle extends GeometricObject{
     private double radius;
 
     public static void main(String[] args) {
-        Circle c1 = new Circle(3.0);
+        Circle c1 = new Circle(4.0);
         Circle c2 = new Circle(4.0);
         c1.getArea();
         c2.getArea();
         max(c1, c2);
+        System.out.println(c1.compareTo(c2));
+        System.out.println(c1.equals(c2));
     }
     public Circle() {
 
@@ -52,6 +54,11 @@ public class Circle extends GeometricObject {
         System.out.println("The circle is created "+ getDateCreated() + " and the radius is "+ radius);
     }
 
+    public boolean equals(Circle c){
+        if (this.radius == c.radius)
+            return true;
+        else
+            return false;
+    }
 
-    
 }

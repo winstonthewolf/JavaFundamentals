@@ -1,12 +1,14 @@
 package AbstractClassesAndInterfaces;
 
+import InheritanceAndPolymorphism.Circle;
+
 import java.util.Objects;
 
 public abstract class GeometricObject implements Comparable<GeometricObject> {
    private String color = "white";
    private boolean filled;
    private java.util.Date dateCreated;
-   protected double area;
+   protected double area, perimeter;
 
    protected GeometricObject(){
       dateCreated = new java.util.Date();
@@ -48,21 +50,33 @@ public abstract class GeometricObject implements Comparable<GeometricObject> {
 
    public static void max(GeometricObject o, GeometricObject o2){
       if (o.compareTo(o2) == -1)
-         System.out.println("Object o2 is bigger");
-      else if (o.compareTo(o2) == 1)
          System.out.println("Object o is bigger");
+      else if (o.compareTo(o2) == 1)
+         System.out.println("Object o2 is bigger");
       else
          System.out.println("Both object are the same size");
    }
 
    @Override
    public int compareTo(GeometricObject o) {
-      if (this.area < o.area)
-         return -1;
-      else if (this.area > o.area)
-         return 1;
-      else
-         return 0;
+      if (this instanceof Circle && o instanceof Circle){          //Compare Circle objects
+         if (((Circle) this).getRadius() > ((Circle)o).getRadius()){
+            return -1;
+         }
+         if (((Circle) this).getRadius() < ((Circle)o).getRadius()){
+            return 1;
+         }
+         else
+            return 0;
+      }
+      else {                              //Compare Geometric Objects
+         if (this.area > ((GeometricObject)o).area)
+            return -1;
+         else if (this.area < ((GeometricObject)o).area)
+            return 1;
+         else
+            return 0;
+      }
    }
 
    @Override
