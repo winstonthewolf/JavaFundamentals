@@ -1,8 +1,9 @@
 package ListsStacksQueuesAndPriorityQueues;
 
 import java.io.File;
-import java.io.Serializable;
-import java.util.*;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Scanner;
 
 public class ShowAlphabeticalOrder {
 
@@ -11,12 +12,10 @@ public class ShowAlphabeticalOrder {
     ShowAlphabeticalOrder(File sourceFile){
 
         try {
-            ArrayList<String> list = readFile(sourceFile);
-            print(list);
-            System.out.println();
+            LinkedList<String> list = readFile(sourceFile);
+            
             sort(list);
-            print(list);
-            System.out.println();
+
             sortDescending(list);
             print(list);
         } catch (Exception e) {
@@ -24,18 +23,16 @@ public class ShowAlphabeticalOrder {
             e.printStackTrace();
         }
     }
-//    public int compare(String s1, String s2){
-//
-//    }
 
-    public ArrayList<String> readFile(File sourceFile) throws Exception{
+
+    public LinkedList<String> readFile(File sourceFile) throws Exception{
 
         if(!sourceFile.exists()){
             System.out.println("Source file does not exist. Choose different file");
             System.exit(-1);
         }
 
-        ArrayList<String> stringList = new ArrayList<String>();
+        LinkedList<String> stringList = new LinkedList<String>();
         try( Scanner in = new Scanner(sourceFile)){
 
            while(in.hasNext()){
@@ -45,48 +42,14 @@ public class ShowAlphabeticalOrder {
         return stringList;
     }
 
-    public void sort(ArrayList<String> list){
-        Iterator<String> iterator = list.iterator();
-        Iterator<String> iteratorClone = list.iterator();
-        String currentMin;
-        int currentMinIndex;
-        String next;
-        iteratorClone.next(); //Start iterator at second element
-        int i = 0;
-        while(iterator.hasNext()){
-            for(int k =0; k < i; k++) //   Start iteratorClone one element in front of iterator
-                if(iteratorClone.hasNext()){
-                    iteratorClone.next();
-                }
-            i++; //Keep track of how many elements infront iteratorClone needs to be
-            next = iterator.next();
-            currentMin = next;
-            currentMinIndex = list.indexOf(currentMin); //keep an eye out for duplicates. Find out what happens when the currentMin is a duplicate. Returns index of first encountered object
-
-            while(iteratorClone.hasNext()){
-                String nextListItem = iteratorClone.next();
-                if (currentMin.compareTo(nextListItem) > 0){
-                   currentMin = nextListItem;
-                   currentMinIndex = list.indexOf(nextListItem);
-               }
-            }
-
-            if(currentMinIndex != list.indexOf(next)){
-                list.add(currentMinIndex, next );
-                list.remove(currentMinIndex + 1);
-                list.add(list.indexOf(next), currentMin);
-                list.remove(list.indexOf(next) + 1);
-                iterator = list.iterator();
-                iteratorClone = list.iterator();
-            }
-            iteratorClone = list.iterator(); //reset iterator
-        }
+    public void sort(LinkedList<String> list){
+        java.util.Collections.sort(list);
     }
-    public void sortDescending(ArrayList<String> list){
+    public void sortDescending(LinkedList<String> list){
         Collections.reverse(list);
     }
 
-    public static void print(ArrayList<String> list){
+    public static void print(LinkedList<String> list){
 
         for (String s: list
              ) {
